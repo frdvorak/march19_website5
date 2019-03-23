@@ -6,6 +6,7 @@ class Navigation extends Component {
         return (
             <nav>
                 <ul className="navigation">
+                    <li className="navigation__title">TACITKNOWLEDGE</li>
                     <li className="navigation__li">Log in</li>
                     <li className="navigation__li">Sign up</li>
                 </ul>

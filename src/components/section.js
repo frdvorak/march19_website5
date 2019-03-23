@@ -7,7 +7,7 @@ class Section extends Component {
             {
                 number: 1,
                 title: "Flexible work life balance",
-                description: "Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis."
+                description: "Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis.",
             },
             {
                 number: 2,
@@ -25,12 +25,15 @@ class Section extends Component {
         return (
             <section className="section">
                 <h4 className="section__h4">Why you might like Tacit</h4>
-                {this.state.articles.map(function (article) {
-                    return (
-                        <Article key={article.number} number={article.number} title={article.title} description={article.description} />
-                    )
-                })
-                }
+                <div className="articles_grid">
+                    {this.state.articles.map(function (article) {
+                        return (
+                            <Article key={article.number} number={article.number} title={article.title} description={article.description} />
+                        )
+                    })
+                    }
+                </div>
+
             </section>
         );
     }

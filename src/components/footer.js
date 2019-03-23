@@ -7,9 +7,9 @@ class Footer extends Component {
             <footer className="footer">
                 <h1 className="footer__h1">Subscribe to our newsletter</h1>
                 <form className="footer__form" action="">
-                    <label className="footer__form__label" for="subscribe">Hi! Want to know when a new job is posted?</label>
+                    <label className="footer__form__label" htmlFor="subscribe">Hi! Want to know when a new job is posted?</label>
                     <input className="footer__form__input" type="text" id="subscribe" name="email" placeholder="Enter your email address" />
-                    <imput className="footer__form__submit" type="submit" id="submit" name="submit" >Subscribe</imput>
+                    <input className="footer__form__submit" type="submit" id="submit" name="Submit" />
                 </form>
             </footer>
         );
