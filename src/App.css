@@ -51,6 +51,7 @@
   font-weight: 700;
   background-image: url('/img/header@1x.jpg');
   background-position: center; 
+  background-size: cover;
 }
 .header__wrapper {
   position: absolute;
@@ -81,6 +82,7 @@
 .header__wrapper__button {
   display: block;
   width: 90%;
+  max-width: 450px;
   background: #2cb7d6;
   border: 3px solid #2cb7d6;
   position: relative;
@@ -106,10 +108,21 @@
   margin-top: 55px;
   margin-bottom: 35px;
 }
+.section__articles_grid {
+  display: grid;
+  width: 100%;
+  box-sizing: border-box;
+  margin: auto;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
+  grid-gap: 5px;
+  padding: 5px;
+  }
 /* Article **********************************/
 .article {
  display: block;
  width: 95%;
+ max-width: 450px; 
  height: 240px;
  color: #ffffff;
  background-size: cover;
@@ -190,10 +203,12 @@
   display: block;
   box-sizing: border-box;
   width: 100%;
+  max-width: 450px; 
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-size: 14px;
   line-height: 14px;
+  margin: auto;
   margin-top: 35px;
   text-align: center;
   padding: 10px 10px 10px 20px;
@@ -202,9 +217,11 @@
   display: block;
   box-sizing: border-box;
   width: 100%;
+  max-width: 450px; 
   font-weight: 700;
   font-size: 14px;
   line-height: 40px;
+  margin: auto;
   margin-top: 15px;
   margin-bottom: 50px;
   color: #ffffff;
@@ -237,13 +254,14 @@
  /* TABLET STYLES - Header **********************************/
 .header {
  background-image: url('/img/header@2x.jpg');
- height: 700px;
+ height: 100vh;
 }
 .header__wrapper__h3 {
   display: none;
 }
 .header__wrapper__h1 {
   font-size: 52px;
+  width: 490px;
 }
 .header__wrapper__p {
   font-size: 24px;
@@ -259,8 +277,8 @@
   font-weight: 700;
 }
 /* TABLET STYLES -  Article **********************************/
-.articles_grid {
-display: grid;
+.section__articles_grid {
+max-width: 930px;
 grid-template-columns: auto auto auto;
 grid-template-rows: auto;
 grid-gap: 20px;
@@ -268,7 +286,9 @@ padding: 20px;
 }
 .article {
  width: 100%;
+ max-width: 300px;
  height: 400px;
+
 }
 .article:nth-of-type(1){
   background-image: url('/img/article1_@2x.jpg');
@@ -297,6 +317,28 @@ padding: 20px;
   margin: 15px 0 60px 15px;
 
 }
+}
 
-
+/* DESKTOP STYLES **********************************/
+@media (min-width: 1240px) {
+  /* DESKTOP STYLES - Navigation **********************************/
+  .navigation {
+    width: 70%;
+    max-width: 800px;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+ /* DESKTOP STYLES - Header **********************************/
+.header {
+ background-image: url('/img/header@3x.jpg');
+}
+.article:nth-of-type(1){
+  background-image: url('/img/article1_@3x.jpg');
+}
+.article:nth-of-type(2){
+  background-image: url('/img/article2_@3x.jpg');
+}
+.article:nth-of-type(3){
+  background-image: url('/img/article3_@3x.jpg');
+}
 }

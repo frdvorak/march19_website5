@@ -25,7 +25,7 @@ class Section extends Component {
         return (
             <section className="section">
                 <h4 className="section__h4">Why you might like Tacit</h4>
-                <div className="articles_grid">
+                <div className="section__articles_grid">
                     {this.state.articles.map(function (article) {
                         return (
                             <Article key={article.number} number={article.number} title={article.title} description={article.description} />
