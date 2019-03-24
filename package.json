@@ -2,7 +2,7 @@
   "name": "march19",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://frdvorak.github.io/march2019website5/",
+  "homepage": "https://frdvorak.github.io/march2019_website5/",
   "dependencies": {
     "axios": "^0.18.0",
     "gh-pages": "^2.0.1",
