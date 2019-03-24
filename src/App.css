@@ -31,6 +31,7 @@
   margin-top: 20px;
   margin-left: 10px;
   transition: all 0.2s;
+  cursor: pointer;
 }
 .navigation__li:hover {
   background-color: #ffffff;
@@ -93,6 +94,7 @@
   font-weight: 700;
   border-radius: 50px;
   transition: all 0.2s;
+  cursor: pointer;
 }
 .header__wrapper__button:hover {
   background: rgba(0,0,0,0);
@@ -136,13 +138,9 @@
  margin-top: 10px;
  text-align: left;
  border-radius: 4px;
+overflow: hidden;
 }
-.article__wrapper {
-  display: block;
-  width: 80%;
-  position: absolute;
-  bottom: 20px; left:20px;
-}
+
 .article:nth-of-type(1){
   background-image: url('/img/article1_@1x.jpg');
 }
@@ -151,6 +149,71 @@
 }
 .article:nth-of-type(3){
   background-image: url('/img/article3_@1x.jpg');
+}
+.article::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -115%;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.4);
+  transition: all .5s;
+  pointer-events: none;
+  transform: skew(12deg);
+  transition-delay: .5s;
+}
+.article:hover::before {
+  transition-delay: 0s;
+  left: -20%;
+}
+
+/* Article border animation ****************/
+.article__animatedBorder {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 95%; height: 94%;
+  display: block;
+  pointer-events: none;
+  z-index: 10;
+  transform: translate(-50%,-50%);
+}
+.article__animatedBorder:before {
+   content: '';
+   position: absolute;
+   top:0; left: 0;
+   width: 100%;
+   height: 2px;
+   background: rgba(255,255,255,0.5);
+   transform-origin: right;
+   transform: scaleX(0);
+   transition: all .3s;
+   transition-delay: .3s;
+}
+.article:hover .article__animatedBorder:before {
+  transition: all .3s;
+  transform: scaleX(1);
+}
+.article:hover .article__animatedBorder:nthChild(even):before {
+    transform-origin: right;
+}
+.article__animatedBorder:nth-child(1) {
+  transform: translate(-50%,-50%) rotate(0deg);
+}
+.article__animatedBorder:nth-child(2) {
+  transform: translate(-50%,-50%) rotate(180deg);
+}
+
+.article__wrapper {
+  display: block;
+  width: 80%;
+  position: absolute;
+  bottom: 20px; left:20px;
+  transform: translateY(0);
+  transition: all .3s;
+}
+article:hover .article__wrapper{
+  transition-delay: 0s;
+  transform: translateY(-30%);
 }
 .article__wrapper__number {
   display: inline-block;
@@ -190,7 +253,7 @@
   color: #444444;
   margin-top: 55px;
 }
-.footer__form__label {
+.footer__p {
   display: block;
   font-size: 18px;
   line-height: 14px;
@@ -198,6 +261,38 @@
   font-weight: 300;
   color: #444444;
   margin-top: 55px;
+}
+.footer__alert {
+  display: block;
+  font-size: 18px;
+  line-height: 14px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  max-width: 450px; 
+  margin: auto;
+  margin-top: 20px;
+  color: red;
+  transition: all .2s;
+}
+.footer__alert.hidden {
+  opacity: 0;
+}
+.footer__form {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  max-width: 450px; 
+  margin: 0 auto;
+  margin-top: 15px;
+}
+.footer__form__label {
+  position: absolute;
+  top: 10px; left: 0px;
+  width: 100%;
+  text-align: center;
+  color: #444444;
+  pointer-events: none;
+  transition: 0.3s;
 }
 .footer__form__input {
   display: block;
@@ -209,9 +304,24 @@
   font-size: 14px;
   line-height: 14px;
   margin: auto;
-  margin-top: 35px;
   text-align: center;
   padding: 10px 10px 10px 20px;
+  border: 1px solid rgba(0,0,0,0.5);
+  outline: 1px solid rgba(0,0,0,0);
+  transition: all 0.2s;
+}
+.footer__form__input:focus,
+.footer__form__input.focused
+{
+  border: 1px solid rgba(0,0,0,0);
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+  outline: 1px solid rgba(0,0,0,0);
+}
+.footer__form__input:focus ~ .footer__form__label,
+.footer__form__input.focused ~ .footer__form__label
+{
+  top: -12px;
+  font-size: 13px;
 }
 .footer__form__submit {
   display: block;
@@ -227,9 +337,10 @@
   color: #ffffff;
   text-align: center;
   border-radius: 40px;
-  background-color: #2cb7d6;
   border: 3px solid #2cb7d6;
+  background-color: #2cb7d6;
   transition: all 0.2s;
+  cursor: pointer;
 }
 .footer__form__submit:hover {
   color: #2cb7d6;
@@ -303,8 +414,18 @@ padding: 20px;
 .footer__h1 {
   font-size: 22px;
 }
+.footer__form {
+ max-width:490px; 
+}
 .footer__form__label {
-  margin-top: 35px;
+  top: 30px; left: 20px;
+  text-align: left;
+  color: #444444;
+}
+.footer__form__input:focus ~ .footer__form__label,
+.footer__form__input.focused ~ .footer__form__label
+ {
+  top: 5px;
 }
 .footer__form__input {
   display: inline-block;
