@@ -53,7 +53,7 @@
   height: 540px;
   color:#ffffff;
   font-weight: 700;
-  background-image: url('/img/header@1x.jpg');
+  background-image: url('/march2019_website5/img/header@1x.jpg');
   background-position: center; 
   background-size: cover;
 }
@@ -175,13 +175,13 @@
  box-sizing: border-box;
 }
 .article:nth-of-type(1){
-  background-image: url('/img/article1_@1x.jpg');
+  background-image: url('/march2019_website5/img/article1_@1x.jpg');
 }
 .article:nth-of-type(2){
-  background-image: url('/img/article2_@1x.jpg');
+  background-image: url('/march2019_website5/img/article2_@1x.jpg');
 }
 .article:nth-of-type(3){
-  background-image: url('/img/article3_@1x.jpg');
+  background-image: url('/march2019_website5/img/article3_@1x.jpg');
 }
 .article::before {
   content: '';
@@ -408,7 +408,7 @@ article:hover .article__wrapper{
 }
  /* TABLET STYLES - Header **********************************/
 .header {
- background-image: url('/img/header@2x.jpg');
+ background-image: url('/march2019_website5/img/header@2x.jpg');
  height: 100vh;
 }
 .header__wrapper__h3 {
@@ -446,13 +446,13 @@ grid-gap: 20px;
 
 }
 .article:nth-of-type(1){
-  background-image: url('/img/article1_@2x.jpg');
+  background-image: url('/march2019_website5/img/article1_@2x.jpg');
 }
 .article:nth-of-type(2){
-  background-image: url('/img/article2_@2x.jpg');
+  background-image: url('/march2019_website5/img/article2_@2x.jpg');
 }
 .article:nth-of-type(3){
-  background-image: url('/img/article3_@2x.jpg');
+  background-image: url('/march2019_website5/img/article3_@2x.jpg');
 }
 /* TABLET STYLES -  Footer **********************************/
 .footer__h1 {
@@ -494,15 +494,15 @@ grid-gap: 20px;
   }
  /* DESKTOP STYLES - Header **********************************/
 .header {
- background-image: url('/img/header@3x.jpg');
+ background-image: url('/march2019_website5/img/header@3x.jpg');
 }
 .article:nth-of-type(1){
-  background-image: url('/img/article1_@3x.jpg');
+  background-image: url('/march2019_website5/img/article1_@3x.jpg');
 }
 .article:nth-of-type(2){
-  background-image: url('/img/article2_@3x.jpg');
+  background-image: url('/march2019_website5/img/article2_@3x.jpg');
 }
 .article:nth-of-type(3){
-  background-image: url('/img/article3_@3x.jpg');
+  background-image: url('/march2019_website5/img/article3_@3x.jpg');
 }
 }
