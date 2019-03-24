@@ -34,10 +34,13 @@
   transition: all 0.2s;
   cursor: pointer;
 }
-.navigation__li:hover {
+
+.navigation__li:hover,
+.navigation__li:focus {
   background-color: #ffffff;
   color: #2cb7d6;
   font-weight: 700;
+  outline: 0px solid #000;
 }
 .navigation__li:nth-of-type(3) {
   border: 3px solid #ffffff;
@@ -101,8 +104,12 @@
   font-weight: 700;
   border: 3px solid rgba(44,183,214,1);
   border-radius: 40px;
-  background: rgba(44,183,214,0.3);
+  background: rgba(44,183,214,0.1);
   cursor: pointer;
+  overflow: hidden;
+}
+.header__wrapper__button:focus {
+  outline: 0px solid #000;
 }
 .header__wrapper__button::before {
   content: '';
@@ -113,10 +120,13 @@
   left: -3px;
   background: #2cb7d6;
   border: 3px solid #2cb7d6;
-  border-radius: 40px;
+  
+  transform: skew(17deg);
   transition: all 0.2s;
 }
-.header__wrapper__button:hover::before {
+.header__wrapper__button:hover::before,
+.header__wrapper__button:focus::before 
+{
   width: 40px;
 }
 .header__wrapper__button::after {
@@ -182,12 +192,10 @@
   left: -115%;
   background: rgba(0,0,0,.4);
   transform: skew(12deg);
-  transition: all .5s;
-  transition-delay: .5s;
+  transition: all .2s ease-out;
   pointer-events: none;
 }
 .article:hover::before {
-  transition-delay: 0s;
   left: -20%;
 }
 
@@ -201,7 +209,6 @@
   left: 50%;
   transform: translate(-50%,-50%);
   pointer-events: none;
-
 }
 .article__animatedBorder:before {
    content: '';
@@ -212,11 +219,10 @@
    background: rgba(255,255,255,0.5);
    transform-origin: right;
    transform: scaleX(0);
-   transition: all .3s;
-   transition-delay: .3s;
+   transition: all .2s;
+   transition-delay: .1s;
 }
 .article:hover .article__animatedBorder:before {
-  transition: all .3s;
   transform: scaleX(1);
 }
 .article:hover .article__animatedBorder:nthChild(even):before {
@@ -369,9 +375,12 @@ article:hover .article__wrapper{
   cursor: pointer;
   box-sizing: border-box;
 }
-.footer__form__submit:hover {
+.footer__form__submit:hover,
+.footer__form__submit:focus
+{
   color: #2cb7d6;
   background-color: rgba(0,0,0,0);
+  outline: 0px solid #000;
 }
 .footer__success {
   margin-top: 15px;
@@ -471,7 +480,6 @@ grid-gap: 20px;
   display: inline-block;
   width: 172px;
   margin: 15px 0 60px 15px;
-
 }
 }
 
