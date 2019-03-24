@@ -2,9 +2,10 @@
   "name": "march19",
   "version": "0.1.0",
   "private": true,
-  "homepade": "https://frdvorak.github.io/march2019website5",
+  "homepage": "https://frdvorak.github.io/march2019website5",
   "dependencies": {
     "axios": "^0.18.0",
+    "gh-pages": "^2.0.1",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-scripts": "2.1.8"
@@ -14,7 +15,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
