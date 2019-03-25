@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import axios from 'axios';
+import axios from 'axios';
 
 class Footer extends Component {
     // Input field 'placeholder' text animation (don't allow placeholder text to slide back unless the field is empty)
@@ -24,7 +24,7 @@ class Footer extends Component {
         const email = emailInput.value;
         const successMessage = document.querySelector('.footer__success');
         const alert = document.querySelector('.footer__alert');
-        const regx = /.+@.+\..+/;
+        const regx = /^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9_\-.]+)\.([a-zA-Z]{2,5})$/;
         let message = '';
         successMessage.classList.add('hidden');
         if (email === '') {
@@ -34,16 +34,15 @@ class Footer extends Component {
             message = 'Please enter valid email in format: name@domain.com';
             this.showAlert(message);
         } else if (regx.test(email)) {
-            console.log('Form Submitted', email);
+
             // post subscription request
-            //axios.post('http://localhost:4000/recipes/add', email)
-            //    .then(res => console.log(res.data));
+            axios.post('https://reqres.in/api/subscribe', email)
+                .then(res => console.log(res.data, 'Form Submitted', email));
             //clear input field
             alert.classList.add('hidden');
             emailInput.value = '';
             emailInput.classList.remove('focused');
             emailInput.blur();
-            message = 'Subscribed ' + email;
             successMessage.classList.remove('hidden');
         }
     }
@@ -56,7 +55,7 @@ class Footer extends Component {
                 <form className="footer__form" onSubmit={this.handleSubmit} action="">
                     <input onChange={this.handleChange} className="footer__form__input" aria-label="Enter email to receive our newsletter" type="text" id="subscribe" name="email" />
                     <label className="footer__form__label" htmlFor="subscribe">Enter your email address</label>
-                    <input className="footer__form__submit" type="submit" id="submit" name="Submit" />
+                    <input className="footer__form__submit" type="submit" id="submit" name="Submit" value="Subscribe" />
                 </form>
                 <p className="footer__success hidden">Thank you for subscribing to our newsletter</p>
             </footer>

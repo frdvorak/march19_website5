@@ -43,7 +43,7 @@
   outline: 0px solid #000;
 }
 .navigation__li:nth-of-type(3) {
-  border: 3px solid #ffffff;
+  border: 2px solid #ffffff;
 }
 
 /* Header **********************************/
@@ -56,6 +56,7 @@
   background-image: url('/march2019_website5/img/header@1x.jpg');
   background-position: center; 
   background-size: cover;
+
 }
 .header::before {
   content: '';
@@ -64,13 +65,13 @@
   height: 100%;
   top: 0; 
   left: 0;
-  background-color: rgba(68,68,68,0.5);
+  background-color: rgba(68,68,68,0.6);
 }
 .header__wrapper {
   display: block;
   position: absolute;
   width: 100%;
-  top: 50%;
+  top: 47%;
   transform: translate(0, -50%);
 }
 .header__wrapper__h3 {
@@ -81,6 +82,7 @@
 .header__wrapper__h1 {
   display: block;
   width: 80%;
+  max-width: 270px;
   margin: auto;
   margin-bottom: 20px;
   font-size: 30px;
@@ -95,18 +97,19 @@
 .header__wrapper__button {
   display: block;
   position: relative;
-  width: 90%;
+  width: 85%;
   max-width: 450px;
   margin: 20px auto;
   height: 40px;
   font-size: 14px;
-  line-height: 40px;
+  line-height: 33px;
   font-weight: 700;
-  border: 3px solid rgba(44,183,214,1);
+  border: 2px solid rgba(44,183,214,1);
   border-radius: 40px;
   background: rgba(44,183,214,0.1);
   cursor: pointer;
   overflow: hidden;
+  box-sizing: border-box;
 }
 .header__wrapper__button:focus {
   outline: 0px solid #000;
@@ -142,8 +145,8 @@
 /* Section **********************************/
 .section__h4 {
   margin-top: 55px;
-  margin-bottom: 35px;
-  font-size: 18px;
+  margin-bottom: 27px;
+  font-size: 22px;
   font-weight: 700;
   color: #444444;
 }
@@ -282,14 +285,14 @@ article:hover .article__wrapper{
 .footer__h1 {
   margin-top: 55px;
   color: #444444;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 700;
 }
 .footer__p {
   margin-top: 55px;
   display: block;
   font-size: 18px;
-  line-height: 14px;
+  line-height: 18px;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   color: #444444;
@@ -301,7 +304,7 @@ article:hover .article__wrapper{
   display: block;
   color: red;
   font-size: 18px;
-  line-height: 14px;
+  line-height: 18px;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   transition: all .2s;
@@ -323,7 +326,10 @@ article:hover .article__wrapper{
   left: 0px;
   width: 100%;
   text-align: center;
-  color: #444444;
+  color: #999999;
+
+  ;
+  font-size: 14px;
   pointer-events: none;
   transition: 0.3s;
 }
@@ -338,17 +344,17 @@ article:hover .article__wrapper{
   font-weight: 300;
   font-size: 14px;
   line-height: 14px;
-  border: 1px solid rgba(0,0,0,0.5);
-  outline: 1px solid rgba(0,0,0,0);
+  border: 0.5px solid rgba(153,153,153,0.8);
+  outline: 0px;
   transition: all 0.2s;
   box-sizing: border-box;
 }
 .footer__form__input:focus,
 .footer__form__input.focused
 {
-  border: 1px solid rgba(0,0,0,0);
-  border-bottom: 1px solid rgba(0,0,0,0.5);
-  outline: 1px solid rgba(0,0,0,0);
+  border: 0.5px solid rgba(153,153,153,0);
+  border-bottom: 0.5px solid rgba(153,153,153,0.7);
+  outline: 0px;
 }
 .footer__form__input:focus ~ .footer__form__label,
 .footer__form__input.focused ~ .footer__form__label
@@ -369,7 +375,7 @@ article:hover .article__wrapper{
   line-height: 40px;
   color: #ffffff;
   text-align: center;
-  border: 3px solid #2cb7d6;
+  border: 2px solid #2cb7d6;
   border-radius: 40px;
   transition: all 0.2s;
   cursor: pointer;
@@ -417,6 +423,7 @@ article:hover .article__wrapper{
 .header__wrapper__h1 {
   font-size: 52px;
   width: 490px;
+  max-width: 490px;
 }
 .header__wrapper__p {
   font-size: 24px;
@@ -430,6 +437,7 @@ article:hover .article__wrapper{
 .section__h4 {
   font-size: 22px;
   font-weight: 700;
+  margin-bottom: 5px;
 }
 /* TABLET STYLES -  Article **********************************/
 .section__articles_grid {
@@ -443,7 +451,6 @@ grid-gap: 20px;
  width: 100%;
  max-width: 300px;
  height: 400px;
-
 }
 .article:nth-of-type(1){
   background-image: url('/march2019_website5/img/article1_@2x.jpg');
@@ -464,7 +471,9 @@ grid-gap: 20px;
 .footer__form__label {
   top: 30px; left: 20px;
   text-align: left;
-  color: #444444;
+}
+.footer__alert {
+  margin-top: 25px;
 }
 .footer__form__input:focus ~ .footer__form__label,
 .footer__form__input.focused ~ .footer__form__label
